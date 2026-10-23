@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebToApp | Turn your website into an Android and iOS app</title>
+<meta name="description" content="Turn your existing website into an Android or iOS app with WebView technology, configurable navigation, app branding, and supported native integrations.">
+<meta name="theme-color" content="#F9F8F7">
+<meta property="og:title" content="WebToApp | Turn your website into a mobile app">
+<meta property="og:description" content="Bring your existing website to Android and iOS with WebView technology, branded app settings, and supported native integrations.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="WebToApp home">
+      <span class="logo-mark"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+      <span>WebToApp</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <span class="nav-login" aria-disabled="true" title="Account login isn't available yet">Login</span>
+      <a class="btn btn-accent btn-sm" href="#convert-form">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. Hero -->
+<section class="hero hero--split" id="home" aria-labelledby="hero-title">
+  <div class="wrap hero-split">
+
+    <div class="hero-copy">
+      <span class="eyebrow">Website-to-app conversion</span>
+      <h1 id="hero-title">Your website. Your mobile app. One powerful platform.</h1>
+      <p class="lead">Turn an existing website into a branded Android and iOS app, with configurable navigation, app customization, and supported device integrations.</p>
+
+      <div class="convert">
+        <form class="convert-form" id="convert-form" novalidate>
+          <label class="visually-hidden" for="website-url">Your website address</label>
+          <input id="website-url" type="url" name="url" placeholder="https://yourwebsite.com" autocomplete="url" aria-describedby="form-hint form-status">
+          <button class="btn btn-ink" type="submit">Check My Website</button>
+        </form>
+        <p class="field-hint" id="form-hint">Use a full address that starts with https://, for example https://yourwebsite.com.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+
+      <ul class="checks">
+        <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">Use the website you already have</li>
+        <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">Android and iOS targets</li>
+        <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">Confirm feature availability for your app</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="flow-demo" role="img" aria-label="Animated illustration: an existing website is converted by WebToApp into branded Android and iOS app previews.">
+        <div class="fd-stage" aria-hidden="true">
+
+          <!-- Connection paths from the conversion panel to the two phones -->
+          <svg class="fd-paths" viewBox="0 0 600 520" width="600" height="520" focusable="false">
+            <path class="fd-path" pathLength="1" d="M496 174 C496 224 115 214 115 258"/>
+            <path class="fd-path" pathLength="1" d="M496 174 C496 222 307 220 307 258"/>
+          </svg>
+
+          <!-- Scene 1: existing website in a desktop browser -->
+          <div class="fd-browser">
+            <div class="fd-chrome">
+              <i></i><i></i><i></i>
+              <span class="fd-url">maple-oak.example</span>
+            </div>
+            <div class="fd-site">
+              <div class="fd-site-nav">
+                <b>Maple &amp; Oak</b>
+                <span class="fd-links"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="fd-site-hero">
+                <div class="fd-site-copy">
+                  <h3>Small-batch coffee, roasted weekly.</h3>
+                  <p><i></i><i></i></p>
+                  <span class="fd-btn">Shop beans</span>
+                </div>
+                <div class="fd-site-img"><span class="fd-bag"></span></div>
+              </div>
+              <div class="fd-site-cards">
+                <div class="fd-card"><span class="fd-thumb"></span><b>Single origin</b><small>Ethiopia</small></div>
+                <div class="fd-card"><span class="fd-thumb"></span><b>Espresso blend</b><small>House roast</small></div>
+                <div class="fd-card"><span class="fd-thumb"></span><b>Subscriptions</b><small>Every week</small></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene 2: conversion link and panel -->
+          <span class="fd-link"><i class="fd-dot"></i></span>
+          <div class="fd-panel">
+            <div class="fd-panel-head">
+              <span class="fd-mark"><img src="assets/icons/icon-bolt-ink.svg" alt="" width="12" height="12"></span>
+              <span class="fd-status">
+                <span class="fd-status-a">Configuring your app</span>
+                <span class="fd-status-b">Preview ready</span>
+              </span>
+            </div>
+            <div class="fd-track"><span class="fd-fill"></span></div>
+            <div class="fd-platforms">
+              <span class="fd-chip fd-chip--a"><img src="assets/icons/icon-check-ink.svg" alt="" width="10" height="10">Android</span>
+              <span class="fd-chip fd-chip--i"><img src="assets/icons/icon-check-ink.svg" alt="" width="10" height="10">iOS</span>
+            </div>
+            <p class="fd-note">Visual demonstration only</p>
+          </div>
+
+          <!-- Scene 3: Android and iOS app previews -->
+          <div class="fd-phone fd-phone--a">
+            <span class="fd-punch"></span>
+            <div class="fd-screen">
+              <div class="fd-app-bar"><span>Maple &amp; Oak</span><i></i></div>
+              <div class="fd-app-card"><b>Fresh roast this week</b><span class="fd-btn">Shop</span></div>
+              <div class="fd-app-grid"><span></span><span></span><span></span><span></span></div>
+              <div class="fd-app-list"><i></i><i></i><i></i></div>
+              <div class="fd-app-nav"><i class="on"></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="fd-phone fd-phone--i">
+            <span class="fd-island"></span>
+            <div class="fd-screen">
+              <div class="fd-app-bar fd-app-bar--center"><span>Maple &amp; Oak</span></div>
+              <div class="fd-app-card"><b>Fresh roast this week</b><span class="fd-btn">Shop</span></div>
+              <div class="fd-app-grid"><span></span><span></span><span></span><span></span></div>
+              <div class="fd-app-list"><i></i><i></i><i></i></div>
+              <div class="fd-app-nav"><i class="on"></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <!-- Scene 4: completion label -->
+          <div class="fd-complete">
+            <p class="fd-complete-title">Your website. Mobile-ready.</p>
+            <div class="fd-tags">
+              <span class="fd-tag"><img src="assets/icons/icon-check-white.svg" alt="" width="10" height="10">Android</span>
+              <span class="fd-tag"><img src="assets/icons/icon-check-white.svg" alt="" width="10" height="10">iOS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <p class="hero-caption">Illustrative animation. The website and app previews are examples, not WebToApp output.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2. Platforms -->
+<section class="section section--rule" id="platforms" aria-labelledby="platforms-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Website platforms</span>
+      <h2 id="platforms-title">Start from the website you already run.</h2>
+      <p class="lead">Your site might be built with a website builder, an e-commerce platform, or custom code. The logos below are examples of common technologies. They do not indicate partnerships, endorsements, or confirmed integrations.</p>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee-viewport" role="region" aria-label="Examples of website platforms, builders, and technologies">
+        <div class="marquee-track">
+          <ul class="marquee-group">
+            <li class="marquee-item"><img src="assets/marquee/shopify-logo.svg" alt="Shopify"></li>
+            <li class="marquee-item"><img src="assets/marquee/wordpress-logo.svg" alt="WordPress"></li>
+            <li class="marquee-item"><img src="assets/marquee/wix-logo.svg" alt="Wix"></li>
+            <li class="marquee-item"><img src="assets/marquee/webflow-logo.svg" alt="Webflow"></li>
+            <li class="marquee-item"><img src="assets/marquee/squarespace-logo.svg" alt="Squarespace"></li>
+            <li class="marquee-item"><img src="assets/marquee/framer-logo.svg" alt="Framer"></li>
+            <li class="marquee-item"><img src="assets/marquee/lovable-logo.svg" alt="Lovable"></li>
+            <li class="marquee-item"><img src="assets/marquee/base44-logo.svg" alt="Base44"></li>
+            <li class="marquee-item"><span>Bolt.new</span></li>
+            <li class="marquee-item"><img src="assets/marquee/replit-logo.svg" alt="Replit"></li>
+            <li class="marquee-item"><span>Bubble</span></li>
+            <li class="marquee-item"><img src="assets/marquee/woocommerce-logo.svg" alt="WooCommerce"></li>
+            <li class="marquee-item"><img src="assets/marquee/html5-logo.svg" alt="HTML5"></li>
+            <li class="marquee-item"><img src="assets/marquee/css-logo.svg" alt="CSS3"></li>
+            <li class="marquee-item"><img src="assets/marquee/javascript-logo.svg" alt="JavaScript"></li>
+            <li class="marquee-item"><img src="assets/marquee/typescript-logo.svg" alt="TypeScript"></li>
+            <li class="marquee-item"><img src="assets/marquee/react-logo.svg" alt="React"></li>
+            <li class="marquee-item"><img src="assets/marquee/nextdotjs-logo.svg" alt="Next.js"></li>
+            <li class="marquee-item"><img src="assets/marquee/vuedotjs-logo.svg" alt="Vue.js"></li>
+            <li class="marquee-item"><img src="assets/marquee/angular-logo.svg" alt="Angular"></li>
+            <li class="marquee-item"><img src="assets/marquee/laravel-logo.svg" alt="Laravel"></li>
+            <li class="marquee-item"><img src="assets/marquee/php-logo.svg" alt="PHP"></li>
+            <li class="marquee-item"><img src="assets/marquee/nodedotjs-logo.svg" alt="Node.js"></li>
+            <li class="marquee-item"><img src="assets/marquee/python-logo.svg" alt="Python"></li>
+            <li class="marquee-item"><img src="assets/marquee/django-logo.svg" alt="Django"></li>
+            <li class="marquee-item"><img src="assets/marquee/tailwindcss-logo.svg" alt="Tailwind CSS"></li>
+            <li class="marquee-item"><img src="assets/marquee/astro-logo.svg" alt="Astro"></li>
+            <li class="marquee-item"><img src="assets/marquee/svelte-logo.svg" alt="Svelte"></li>
+          </ul>
+          <ul class="marquee-group" aria-hidden="true">
+            <li class="marquee-item"><img src="assets/marquee/shopify-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/wordpress-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/wix-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/webflow-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/squarespace-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/framer-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/lovable-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/base44-logo.svg" alt=""></li>
+            <li class="marquee-item"><span>Bolt.new</span></li>
+            <li class="marquee-item"><img src="assets/marquee/replit-logo.svg" alt=""></li>
+            <li class="marquee-item"><span>Bubble</span></li>
+            <li class="marquee-item"><img src="assets/marquee/woocommerce-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/html5-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/css-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/javascript-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/typescript-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/react-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/nextdotjs-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/vuedotjs-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/angular-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/laravel-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/php-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/nodedotjs-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/python-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/django-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/tailwindcss-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/astro-logo.svg" alt=""></li>
+            <li class="marquee-item"><img src="assets/marquee/svelte-logo.svg" alt=""></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="marquee-note">Compatibility depends on your site. Check its mobile layout, sign-in, and checkout flows before you plan your app.</p>
+  </div>
+</section>
+
+<!-- 3. Problem and solution -->
+<section class="section section--surface" id="about" aria-labelledby="about-title">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Without starting over</span>
+      <h2 id="about-title" style="margin-top:18px">A mobile app shouldn't mean rebuilding your website.</h2>
+      <p class="lead" style="margin-top:20px">Many businesses already have a website that works on phones. Rebuilding that work as a separate native app takes time and creates a second product to maintain. WebToApp uses WebView technology to bring your existing site into an app, so the content people see still comes from your website.</p>
+      <ul class="bullets">
+        <li>
+          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
+          <div>
+            <h4>Reuse what you have built</h4>
+            <p>Keep the pages, content, and layouts you already maintain, instead of recreating them natively.</p>
+          </div>
+        </li>
+        <li>
+          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
+          <div>
+            <h4>Keep the brand consistent</h4>
+            <p>Plan an app icon, splash screen, and navigation that match the website your customers already know.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <figure class="flow-figure" style="margin:0">
+      <svg viewBox="0 0 560 390" role="img" aria-labelledby="flow-title flow-desc">
+        <title id="flow-title">One website connected to WebToApp, then to Android and iOS apps</title>
+        <desc id="flow-desc">Your website connects to WebToApp, which produces an Android app and an iOS app.</desc>
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#1C1A15"/>
+          </marker>
+        </defs>
+        <rect x="30" y="120" width="200" height="120" rx="16" fill="#F9F8F7" stroke="#D9D3C9" stroke-width="1.5"/>
+        <text x="130" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1C1A15">Your website</text>
+        <text x="130" y="196" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#66615A">Existing responsive site</text>
+
+        <line x1="232" y1="180" x2="290" y2="180" stroke="#1C1A15" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+        <rect x="300" y="110" width="230" height="140" rx="16" fill="#1C1A15"/>
+        <text x="415" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#F9F8F7">WebToApp</text>
+        <text x="415" y="192" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#D9D3C9">WebView, branding, navigation</text>
+        <text x="415" y="216" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#D9D3C9">Integrations as configured</text>
+
+        <line x1="352" y1="250" x2="352" y2="296" stroke="#1C1A15" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="477" y1="250" x2="477" y2="296" stroke="#1C1A15" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+        <rect x="300" y="300" width="105" height="60" rx="12" fill="#FCFCFC" stroke="#D9D3C9" stroke-width="1.5"/>
+        <text x="352.5" y="336" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1C1A15">Android</text>
+        <rect x="425" y="300" width="105" height="60" rx="12" fill="#FCFCFC" stroke="#D9D3C9" stroke-width="1.5"/>
+        <text x="477.5" y="336" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1C1A15">iOS</text>
+
+        <text x="30" y="282" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#66615A">One source of content.</text>
+      </svg>
+      <figcaption>Illustrative diagram of how one website connects to WebToApp and then to each platform.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 4. How it works -->
+<section class="section" id="how-it-works" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-title">From website to app in three steps.</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num">01</span>
+        <h3>Enter your website URL</h3>
+        <p>Start with the address of the site you want in an app. The form checks that the address is formatted correctly.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">02</span>
+        <h3>Customize your app</h3>
+        <p>Plan the app name, icon, splash screen, and navigation for Android and iOS, so the app matches your brand.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">03</span>
+        <h3>Configure and prepare for release</h3>
+        <p>Confirm the integrations you need, then prepare signing, builds, and store submission. Scope depends on your plan.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. Capabilities -->
+<section class="section section--dark" id="features" aria-labelledby="cap-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Capabilities</span>
+      <h2 id="cap-title">What WebToApp covers, and what needs confirming.</h2>
+      <p class="lead">Every item is labelled. Core items are part of the WebView approach. Other items depend on your website, platform rules, permissions, and plan.</p>
+    </div>
+
+    <div class="tag-legend" style="margin-top:32px">
+      <span><span class="tag tag--core">Core</span> Part of the WebView approach</span>
+      <span><span class="tag tag--confirm">Confirm</span> Depends on setup, platform, or plan</span>
+    </div>
+
+    <div class="cap-grid cap-group">
+      <div class="cap-intro">
+        <h3>Conversion and branding</h3>
+        <p>The foundation of a WebToApp project. Some items still depend on the plan and setup you choose.</p>
+      </div>
+      <ul class="cap-list">
+        <li><div class="cap-text"><h4>WebView app experience</h4><p>Your existing website loads inside the app, so pages and content are reused.</p></div><span class="tag tag--core">Core</span></li>
+        <li><div class="cap-text"><h4>Android and iOS targets</h4><p>Both platforms are planned as target platforms for your app.</p></div><span class="tag tag--core">Core</span></li>
+        <li><div class="cap-text"><h4>App name, icon, and splash screen</h4><p>Set the identity your users see when the app opens and on their home screen.</p></div><span class="tag tag--core">Core</span></li>
+        <li><div class="cap-text"><h4>Navigation configuration</h4><p>Choose the destinations the app menu reaches. Confirm the scope for your plan.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Store publishing preparation</h4><p>Preparation scope depends on your plan and the service you select.</p></div><span class="tag tag--confirm">Confirm</span></li>
+      </ul>
+    </div>
+
+    <div class="cap-grid cap-group">
+      <div class="cap-intro">
+        <h3>Native and device features</h3>
+        <p>Available only where the app, platform, and permissions support them. Confirm each one for your project before you rely on it.</p>
+      </div>
+      <ul class="cap-list">
+        <li><div class="cap-text"><h4>Push notifications</h4><p>Requires configuration and platform setup.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Deep links</h4><p>Available where configured for your app and website.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Camera, files, uploads, and downloads</h4><p>Depends on permissions and platform support.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Location and other device features</h4><p>Check availability before planning these into your app.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Offline behaviour and caching</h4><p>Depends on implementation, your website, and device settings.</p></div><span class="tag tag--confirm">Confirm</span></li>
+        <li><div class="cap-text"><h4>Analytics and advertising</h4><p>Available where supported. Confirm each integration first.</p></div><span class="tag tag--confirm">Confirm</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Project setup -->
+<section class="section section--beige" id="demo" aria-labelledby="demo-title">
+  <div class="wrap split">
+    <figure class="frame" style="margin:0">
+      <img src="assets/images/visual-editor.svg" alt="Illustrative editor concept showing app components, a phone preview, and branding controls" width="1920" height="1088">
+      <figcaption>Illustrative editor concept. This is not a screenshot of WebToApp.</figcaption>
+    </figure>
+
+    <div>
+      <span class="eyebrow">Project setup</span>
+      <h2 id="demo-title" style="margin-top:18px">Shape the app around your website.</h2>
+      <p class="body-text" style="margin-top:20px">Review the core details of your app in one place: the source website, name, platforms, branding, and navigation. The panel shows the kind of settings you would review. It is an example, not a working editor.</p>
+
+      <div class="demo-panel" style="margin-top:32px" role="group" aria-label="Example app project settings">
+        <div class="demo-panel-head">
+          <span>Example app project</span>
+          <small>Preview only</small>
+        </div>
+        <dl>
+          <div class="demo-row">
+            <dt>Website</dt>
+            <dd>https://your-website.com</dd>
+          </div>
+          <div class="demo-row">
+            <dt>App name</dt>
+            <dd>Your app name</dd>
+          </div>
+          <div class="demo-row">
+            <dt>Platforms</dt>
+            <dd>
+              <div class="chip-row">
+                <span class="chip"><i></i>Android</span>
+                <span class="chip"><i></i>iOS</span>
+              </div>
+            </dd>
+          </div>
+          <div class="demo-row">
+            <dt>Branding</dt>
+            <dd>
+              <div class="swatches">
+                <span class="swatch"><i style="background:#1C1A15"></i>Primary</span>
+                <span class="swatch"><i style="background:#EBE7DF"></i>Background</span>
+                <span class="swatch"><i style="background:#FFD400"></i>Accent</span>
+              </div>
+            </dd>
+          </div>
+          <div class="demo-row">
+            <dt>Navigation</dt>
+            <dd>
+              <div class="chip-row">
+                <span class="chip">Home</span>
+                <span class="chip">Products</span>
+                <span class="chip">Account</span>
+              </div>
+            </dd>
+          </div>
+          <div class="demo-row">
+            <dt>Integrations</dt>
+            <dd>
+              <div class="chip-row">
+                <span class="chip"><i class="open"></i>Camera: confirm</span>
+                <span class="chip"><i class="open"></i>Push: configure</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <p class="demo-caption">Example values only. Your settings will depend on your website and plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Responsive websites -->
+<section class="section" aria-labelledby="responsive-title">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Responsive websites</span>
+      <h2 id="responsive-title" style="margin-top:18px">Your website, ready for phone screens.</h2>
+      <p class="body-text" style="margin-top:20px">A WebView app shows your site at phone width. The best results come from a responsive site that already works on small screens.</p>
+      <ul class="bullets">
+        <li>
+          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
+          <div>
+            <h4>Readable text and comfortable tap targets</h4>
+            <p>Buttons and links should be easy to tap without zooming.</p>
+          </div>
+        </li>
+        <li>
+          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
+          <div>
+            <h4>Navigation that works with touch</h4>
+            <p>Menus should open, close, and move between pages without relying on hover.</p>
+          </div>
+        </li>
+        <li>
+          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
+          <div>
+            <h4>Forms that suit mobile keyboards</h4>
+            <p>Test sign-in and other forms on a phone-sized screen before you plan the app.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <figure class="frame" style="margin:0">
+      <img src="assets/images/devices-responsive.svg" alt="Laptop, tablet, and phone showing an illustrative app concept" width="1920" height="1088">
+      <figcaption>Illustrative concept, not a WebToApp screenshot.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 8. Use cases -->
+<section class="section section--surface" id="use-cases" aria-labelledby="use-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Use cases</span>
+      <h2 id="use-title">Who WebToApp is for.</h2>
+      <p class="lead">Different teams use a website-to-app approach for different reasons. Here is how it could fit each one.</p>
+    </div>
+
+    <ul class="use-list">
+      <li>
+        <h3>SaaS founders</h3>
+        <p>Add a mobile entry point to a web product you already maintain. App navigation and branding are planned around your product, and content still comes from your website.</p>
+      </li>
+      <li>
+        <h3>E-commerce businesses</h3>
+        <p>Bring your store into a branded app with navigation to categories, products, and account pages. Checkout behaviour in a WebView depends on your site and store policies, so test it before launch.</p>
+      </li>
+      <li>
+        <h3>Agencies and freelancers</h3>
+        <p>Deliver a mobile app alongside a client's website, with its own branding. Confirm each client's platform, integration, and publishing responsibilities at the start.</p>
+      </li>
+      <li>
+        <h3>Content publishers</h3>
+        <p>Give readers an app experience for articles, video, or newsletters on your existing site. Push notifications and deep links need configuration and platform setup.</p>
+      </li>
+      <li>
+        <h3>Existing web application owners</h3>
+        <p>Wrap a responsive web application for mobile users. Test sign-in, device features, and offline behaviour on each target platform before you release.</p>
+      </li>
+    </ul>
+
+    <div class="concept-row">
+      <figure class="concept">
+        <div class="concept-img"><img src="assets/images/showcase-shop.svg" alt="Illustrative retail app concept on a phone" width="1200" height="1600" loading="lazy"></div>
+        <figcaption><b>E-commerce concept</b>Illustrative storefront. Not a customer app.</figcaption>
+      </figure>
+      <figure class="concept">
+        <div class="concept-img"><img src="assets/images/showcase-analytics.svg" alt="Illustrative analytics dashboard concept on a phone" width="1200" height="1600" loading="lazy"></div>
+        <figcaption><b>SaaS concept</b>Illustrative analytics dashboard. Not a customer app.</figcaption>
+      </figure>
+      <figure class="concept">
+        <div class="concept-img"><img src="assets/images/showcase-social.svg" alt="Illustrative community feed concept on a phone" width="1200" height="1600" loading="lazy"></div>
+        <figcaption><b>Publisher concept</b>Illustrative community feed. Not a customer app.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Transparency -->
+<section class="section" aria-labelledby="trust-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How we describe WebToApp</span>
+      <h2 id="trust-title">Clear about what is confirmed.</h2>
+    </div>
+    <ul class="promise-grid">
+      <li class="promise">
+        <h3>Features are labelled</h3>
+        <p>Each capability is marked as core or as something to confirm for your app. Anything not confirmed is marked that way.</p>
+      </li>
+      <li class="promise">
+        <h3>Your website stays the source</h3>
+        <p>Content comes from your website through WebView, so updates follow your site, subject to caching and app behaviour.</p>
+      </li>
+      <li class="promise">
+        <h3>Store rules apply</h3>
+        <p>The App Store and Google Play review apps against their own policies. Those rules can affect what is approved and when.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10. Pricing preview -->
+<section class="section section--beige" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <span class="eyebrow">Pricing</span>
+      <h2 id="pricing-title">Monthly plans for your website-to-app project.</h2>
+      <p class="lead">Inclusions marked as to be confirmed are not yet published. Check them before you buy.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan-card">
+        <div class="plan-top"><span class="plan-name">Starter</span></div>
+        <p class="price">$19<small>/month</small></p>
+        <p class="plan-desc">A starting point for a website-to-app project.</p>
+        <hr class="plan-divider">
+        <ul class="plan-details">
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">App limits</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Android and iOS</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Integrations</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Build and publishing</span> <span class="to-confirm">To be confirmed</span></span></li>
+        </ul>
+        <a class="btn btn-outline btn-block" href="#convert-form">Check My Website</a>
+      </article>
+
+      <article class="plan-card is-featured">
+        <div class="plan-top"><span class="plan-name">Growth</span><span class="plan-flag">Featured</span></div>
+        <p class="price">$49<small>/month</small></p>
+        <p class="plan-desc">For teams planning a more tailored app experience.</p>
+        <hr class="plan-divider">
+        <ul class="plan-details">
+          <li><img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true"><span><span class="label">App limits</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true"><span><span class="label">Navigation and branding</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true"><span><span class="label">Integrations</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true"><span><span class="label">Build and publishing</span> <span class="to-confirm">To be confirmed</span></span></li>
+        </ul>
+        <a class="btn btn-accent btn-block" href="#convert-form">Check My Website</a>
+      </article>
+
+      <article class="plan-card">
+        <div class="plan-top"><span class="plan-name">Scale</span></div>
+        <p class="price">$99<small>/month</small></p>
+        <p class="plan-desc">For organizations with broader app requirements.</p>
+        <hr class="plan-divider">
+        <ul class="plan-details">
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Multi-app limits</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Android and iOS</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Integrations</span> <span class="to-confirm">To be confirmed</span></span></li>
+          <li><img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true"><span><span class="label">Publishing assistance</span> <span class="to-confirm">To be confirmed</span></span></li>
+        </ul>
+        <a class="btn btn-outline btn-block" href="#convert-form">Check My Website</a>
+      </article>
+    </div>
+
+    <p class="plan-note">Plan purchase isn't available on this page yet. Start with your website, then confirm plan details before you buy.</p>
+    <p style="text-align:center;margin-top:20px"><a class="text-link" href="pricing.html">Compare plans in detail</a></p>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap split split--top">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-title" style="margin-top:18px">Questions before you start.</h2>
+      <p class="body-text" style="margin-top:20px">Feature availability depends on your website and project. Confirm the details that matter to you before relying on a specific integration.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" name="faq" open>
+        <summary>How does website-to-app conversion work?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>WebToApp uses WebView technology to present your existing website inside an Android or iOS app. Content comes from your website, and app navigation, branding, and supported integrations are configured for the app.</p></div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>Do I need to rebuild my website?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>No. The approach is built around your existing website. Check that it works well at phone width, because the app shows it there.</p></div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>Does WebToApp support Android and iOS?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>Both are target platforms. Each has its own requirements, permissions, and store rules, so confirm availability for your project and plan.</p></div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>Can I customize my app's branding?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>You can plan the app name, icon, splash screen, and theme. The options available depend on the platforms and features your project includes.</p></div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>Do all websites support every native integration?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body"><p>No. Features such as push notifications, camera access, location, and deep links depend on your website, app configuration, platform support, and permissions.</p></div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>What is required for app store publishing?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          <p>You need developer accounts with Apple and Google, app signing, and store listing details. Store review policies apply, including rules for WebView-based apps.</p>
+          <p>Confirm your plan's build and publishing scope before release.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Final call to action -->
+<section class="section" style="padding-top:0" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-card cta-block">
+      <span class="eyebrow">Next step</span>
+      <h2 id="cta-title" style="margin-top:18px">Check whether your website is ready for an app.</h2>
+      <p class="lead">Enter your website address above to check its format. Then review which features your app would need.</p>
+      <div class="cta-actions">
+        <a class="btn btn-accent" href="#convert-form">Check My Website</a>
+        <a class="btn btn-outline" href="features.html">Explore features</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="WebToApp home">
+          <span class="logo-mark"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+          <span>WebToApp</span>
+        </a>
+        <p>Turn your existing website into a WebView-based Android and iOS app. Features and availability are confirmed for each project.</p>
+      </div>
+      <nav aria-labelledby="f-product">
+        <h2 class="footer-title" id="f-product">Product</h2>
+        <ul class="footer-links">
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#convert-form">Check my website</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-learn">
+        <h2 class="footer-title" id="f-learn">Learn</h2>
+        <ul class="footer-links">
+          <li><a href="#use-cases">Use cases</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="features.html#integrations">Device integrations</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 WebToApp. A product by Oezu Technologies LLC.</span>
+      <span>Feature availability depends on your project.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
