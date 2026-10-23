@@ -159,3 +159,31 @@
     applyPause();
   });
 })();
+
+/* Reveal homepage feature cards as they enter view; cards stay visible once revealed. */
+(function () {
+  'use strict';
+
+  var cards = document.querySelectorAll('.webtoapp_feature-card');
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!cards.length || !('IntersectionObserver' in window) || reduceMotion) return;
+
+  document.documentElement.classList.add('feature-motion');
+
+  var observer = new IntersectionObserver(function (entries, currentObserver) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      currentObserver.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: '0px 0px -6% 0px',
+    threshold: 0.08
+  });
+
+  cards.forEach(function (card) {
+    observer.observe(card);
+  });
+})();

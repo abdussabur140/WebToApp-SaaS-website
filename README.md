@@ -4,7 +4,7 @@ A static, multi-page marketing site built with HTML, CSS, JavaScript, and SVG. N
 
 ## Structure
 
-- `index.html`: homepage. Hero with website address check, website platform examples, problem and solution, three-step workflow, capabilities (Core vs Confirm), project-setup example, responsive-website guidance, use cases, transparency points, pricing preview, FAQ, and final call to action.
+- `index.html`: homepage. Hero with website address check, website platform examples, problem and solution, three-step workflow, sticky feature-card stack, project-setup example, responsive-website guidance, use cases, transparency points, pricing preview, FAQ, and final call to action.
 - `features.html`: features page. Approach, core capabilities, app customization, navigation and experience, device-integration requirements table, release path, and CTA.
 - `pricing.html`: Starter $19, Growth $49, and Scale $99 per month, a plan comparison table, how conversion works, pricing FAQ, and CTA.
 - `assets/theme.css`: the entire design system. Tokens live in `:root` (colour, type scale, spacing, radii). Sections are numbered and documented at the top of the file.
@@ -28,6 +28,12 @@ The right side of the homepage hero is a CSS-and-JavaScript animation of the flo
 - Content: the browser site and app screens use a fictional business ("Maple & Oak"). The panel text says "Visual demonstration only." Do not change it to imply a real build or publish step.
 - Reduced motion: `prefers-reduced-motion` shows a static composition with every element in its final state.
 - To retime the scenes, edit the keyframe percentages. To change the content, edit the markup inside `.flow-demo`.
+
+## Homepage feature stack
+
+The `#features` section replaces the former compact capabilities block with four illustrated product stories. On wider screens, the cards layer with CSS sticky positioning; below 900px they return to normal document flow. The illustrations are HTML, CSS, and inline SVG, so no additional image assets or animation libraries are required.
+
+`assets/script.js` uses IntersectionObserver only to reveal cards as they enter the viewport. All feature content is visible without JavaScript, and reduced-motion preferences disable the entrance and decorative animations.
 
 ## Design notes
 
