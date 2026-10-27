@@ -37,8 +37,8 @@ The `#features` section replaces the former compact capabilities block with four
 
 ## Design notes
 
-- Colours: warm off-white background, near-black text, beige surfaces, dark sections, and a yellow accent used sparingly for primary actions and highlights.
-- Type: Source Serif 4 for display headings and Inter for body text, both loaded from Google Fonts. Fallbacks are Georgia and the system UI font.
+- Colours: beige page background (`#EBE7DF`), near-white cards and surfaces (`#FCFCFC`), near-black text, a dark footer and featured pricing card, and a yellow accent used sparingly for primary actions and highlights.
+- Type: Google Sans for headings and body text, loaded from Google Fonts with Arial as a fallback.
 - Feature status: every capability is labelled Core (part of the WebView approach) or Confirm (depends on the website, platform, permissions, or plan). Keep those labels accurate when the product changes.
 - Pricing: prices are preserved. Inclusions that have not been published are shown as "To be confirmed" or "Not yet specified." Replace them only with confirmed information.
 
