@@ -4,14 +4,14 @@ A static, multi-page marketing site built with HTML, CSS, JavaScript, and SVG. N
 
 ## Structure
 
-- `index.html`: homepage. Hero with website address check, website platform examples, problem and solution, three-step workflow, sticky feature-card stack, project-setup example, responsive-website guidance, use cases, transparency points, pricing preview, FAQ, and final call to action.
-- `features.html`: features page. Approach, core capabilities, app customization, navigation and experience, device-integration requirements table, release path, and CTA.
-- `pricing.html`: Starter $19, Growth $49, and Scale $99 per month, a plan comparison table, how conversion works, pricing FAQ, and CTA.
+- `index.html`: homepage. Hero with website address check, a platform statement and animated platform-logo strip, dashboard overview, problem and solution, three-step workflow, sticky feature-card stack, responsive-website guidance, use cases, transparency points, pricing preview, FAQ, and final call to action.
+- `features.html`: features page. A concise hero followed by cards for customization, app features and integrations, and AdMob ad formats.
+- `pricing.html`: focused pricing header, Android/iOS platform toggle with Starter $19, Growth $49, and Scale $99 monthly cards, and a plan comparison table.
 - `assets/theme.css`: the entire design system. Tokens live in `:root` (colour, type scale, spacing, radii). Sections are numbered and documented at the top of the file.
-- `assets/script.js`: mobile navigation (open, close on link, Escape) and local website address validation. It makes no network requests and does not submit the address or start app setup.
+- `assets/script.js`: mobile navigation, Android/iOS pricing toggle, subtle scroll-reveal animations, and local website address validation. Reveal effects respect reduced-motion preferences. The script makes no network requests and does not submit the address or start app setup.
 - `assets/icons/`: SVG icons. `*-ink.svg` variants are for light surfaces; `*-white.svg` and `icon-arrow-light.svg` are for dark surfaces. `favicon.svg` is the site icon.
 - `assets/marquee/`: platform and technology logos used in the homepage strip.
-- `assets/images/`: illustrative SVG images. The hero no longer uses `hero-dashboard.svg`; the other images are used on the homepage (see notes below).
+- `assets/images/`: dashboard overview image and illustrative SVG images. The hero no longer uses `hero-dashboard.svg`; the other images are used on the homepage (see notes below).
 
 ## Running locally
 
@@ -39,12 +39,13 @@ The `#features` section replaces the former compact capabilities block with four
 
 - Colours: beige page background (`#EBE7DF`), near-white cards and surfaces (`#FCFCFC`), near-black text, a dark footer and featured pricing card, and a yellow accent used sparingly for primary actions and highlights.
 - Type: Google Sans for headings and body text, loaded from Google Fonts with Arial as a fallback.
-- Feature status: every capability is labelled Core (part of the WebView approach) or Confirm (depends on the website, platform, permissions, or plan). Keep those labels accurate when the product changes.
+- Feature availability depends on project, platform, permissions, and plan. Signing keystore and integration modules are listed in the dashboard, but their details and availability need confirmation.
 - Pricing: prices are preserved. Inclusions that have not been published are shown as "To be confirmed" or "Not yet specified." Replace them only with confirmed information.
 
 ## Notes on the images
 
 - Icons and logos are vector SVG.
+- `assets/images/dashboard-overview.png` shows the app dashboard with its settings and mobile preview.
 - The hero dashboard, editor, responsive-devices, and showcase phone images are rendered concepts. Vector SVG cannot represent them faithfully, so each file embeds the original raster image data. They are captioned as illustrative concepts. They show invented brand names and purple styling, so replace them with real WebToApp screenshots before launch.
 - `assets/images/avatar-*.svg` and `logo-*.svg` are not used by the current pages. Keep them only if you plan to use them again.
 - The platform wordmarks in `assets/marquee/` are examples. They do not indicate partnerships, endorsements, or verified integrations.

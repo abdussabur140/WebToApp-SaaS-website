@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WebToApp | Features for website-to-app conversion</title>
-<meta name="description" content="Explore how WebToApp uses WebView to turn your website into an Android or iOS app, with branding, navigation, and device integrations that depend on your project.">
+<meta name="description" content="Explore WebToApp customization, Firebase notifications, sign-in, device features, analytics integrations, and AdMob ads.">
 <meta name="theme-color" content="#EBE7DF">
 <meta property="og:title" content="WebToApp | Features">
-<meta property="og:description" content="WebView-based website-to-app conversion, app branding, navigation, and device integrations, with each feature's requirements stated.">
+<meta property="og:description" content="Customize your app, explore powerful app features, and choose AdMob banner or interstitial ads.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +30,11 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="features.html" aria-current="page">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <span class="nav-login" aria-disabled="true" title="Account login isn't available yet">Login</span>
+      <div class="site-nav-links">
+        <a href="features.html" aria-current="page">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <span class="nav-login" aria-disabled="true" title="Account login isn't available yet">Login</span>
+      </div>
       <a class="btn btn-accent btn-sm" href="index.html#convert-form">Get started</a>
     </nav>
   </div>
@@ -40,296 +42,206 @@
 
 <main id="main">
 
-<!-- Page hero -->
-<section class="page-hero" aria-labelledby="features-title">
-  <div class="wrap split split--top">
-    <div>
-      <span class="eyebrow">Features</span>
-      <h1 id="features-title">Features for your website-to-app project.</h1>
-      <p class="lead">WebToApp turns your existing website into an Android or iOS app using WebView technology. Branding, navigation, notifications, advertising, and device integrations depend on what your app and target platforms support. Each one is labelled below.</p>
-      <div class="page-hero-actions">
-        <a class="btn btn-ink" href="index.html#convert-form">Check My Website</a>
-        <a class="btn btn-outline" href="pricing.html">View pricing</a>
-      </div>
+<!-- Features hero -->
+<section class="features-hero" aria-labelledby="features-title">
+  <div class="wrap">
+    <span class="eyebrow">Features</span>
+    <h1 id="features-title">Everything your app needs, in one clear place.</h1>
+    <p class="lead">Customize navigation and branding, add powerful app features, and choose the ad formats that suit your app.</p>
+    <div class="page-hero-actions">
+      <a class="btn btn-ink" href="index.html#convert-form">Check My Website</a>
+      <a class="btn btn-outline" href="pricing.html">View pricing</a>
     </div>
-    <aside class="key-card" aria-labelledby="key-title">
-      <h2 class="key-title" id="key-title">How to read this page</h2>
-      <ul class="key-list">
+    <p class="features-availability">Feature availability may depend on your plan, platform, permissions, and app configuration.</p>
+  </div>
+</section>
+
+<!-- Customization features -->
+<section class="section feature-category section--beige" id="customization" aria-labelledby="customization-title">
+  <div class="wrap">
+    <header class="section-head section-head--center">
+      <span class="eyebrow">Customization</span>
+      <h2 id="customization-title">Shape the app around your brand and experience.</h2>
+      <p class="lead">Configure navigation, app behaviour, and custom presentation for your project.</p>
+    </header>
+    <div class="feature-card-grid">
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-arrow-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Bottom Navigation</h3>
+        <p>Give users quick access to the app's primary destinations.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>App Bar</h3>
+        <p>Use a native app bar with floating action buttons.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Navigation Drawer</h3>
+        <p>Organize additional destinations in a slide-out app menu.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Custom Branding</h3>
+        <p>Personalize the splash screen, logo, and app color scheme.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Custom CSS &amp; JS</h3>
+        <p>Extend the app experience with project-specific styles and scripts.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-arrow-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Deep Links</h3>
+        <p>Open specific app pages directly from supported links.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-wifi-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Circle Loader</h3>
+        <p>Show a circular loading indicator while app content loads.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-shield-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Error Screen</h3>
+        <p>Present a clear screen when a page or network request fails.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-shield-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Exit Blocker</h3>
+        <p>Help prevent accidental exits from the app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-upload-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>File Downloader</h3>
+        <p>Support downloading files from within the app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>JavaScript Bridge</h3>
+        <p>Update bottom navigation and drawer items without rebuilding the app.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Powerful modules -->
+<section class="section feature-category section--surface" id="modules" aria-labelledby="modules-title">
+  <div class="wrap">
+    <header class="section-head section-head--center">
+      <span class="eyebrow">Powerful features</span>
+      <h2 id="modules-title">Connect your app to services and device capabilities.</h2>
+      <p class="lead">Use notifications, sign-in, analytics, device permissions, and more. Platform support and permissions apply.</p>
+    </header>
+    <div class="feature-card-grid">
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Firebase Push Notifications</h3>
+        <p>Send push notifications, including targeted sends and notifications through a Push Notification API.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-shield-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Google Sign-In</h3>
+        <p>Let users sign in with their Google account.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-shield-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Biometric Authentication</h3>
+        <p>Support fingerprint or face recognition for authentication.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Meta SDK Integration</h3>
+        <p>Integrate Meta SDK features for Facebook and Instagram.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-arrow-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>AppsFlyer Analytics</h3>
+        <p>Connect AppsFlyer to measure app activity and campaign performance.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>In-App Purchases</h3>
+        <p>Enable purchase flows from within the app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-nfc-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>QR Scanner</h3>
+        <p>Scan QR codes using the device camera.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-camera-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Location, Camera &amp; Microphone</h3>
+        <p>Request device permissions for location, camera, and microphone features.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-upload-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>File Uploads &amp; Downloads</h3>
+        <p>Support file selection, upload, and download flows in the app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-wifi-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Speed with Caching</h3>
+        <p>Use caching to help content load faster and support a smoother experience.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Live Content Sync</h3>
+        <p>Keep app content in sync with updates to your website.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>Signing Keystore &amp; Integration Modules</h3>
+        <p>These are listed in the dashboard; details and availability need confirmation.</p>
+        <span class="tag tag--confirm">Details to confirm</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Optional add-ons -->
+<section class="section feature-category section--beige" id="addons" aria-labelledby="addons-title">
+  <div class="wrap">
+    <header class="section-head section-head--center">
+      <span class="eyebrow">Ad features</span>
+      <h2 id="addons-title">Choose where ads appear in your app.</h2>
+      <p class="lead">Ad formats, consent requirements, and store policies should be checked for your app and target platforms.</p>
+    </header>
+    <div class="feature-card-grid feature-card-grid--two">
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-bolt-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>AdMob Banner Ads</h3>
+        <p>Display banner ads at the bottom of the app.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card-icon"><img src="assets/icons/icon-layers-ink.svg" alt="" aria-hidden="true"></span>
+        <h3>AdMob Interstitial Ads</h3>
+        <p>Show full-screen ads at natural transition points in the app.</p>
+      </article>
+    </div>
+    <div class="cta-card cta-block features-experience-card" aria-labelledby="features-experience-title">
+      <div class="features-experience-copy">
+        <span class="eyebrow">Made for your business</span>
+        <h2 id="features-experience-title">A better app starts with a better experience.</h2>
+        <p class="lead">Bring your brand, website, and essential app features together in one place.</p>
+        <div class="cta-actions">
+          <a class="btn btn-accent" href="index.html#convert-form">Check My Website</a>
+          <a class="btn btn-outline" href="pricing.html">View pricing</a>
+        </div>
+      </div>
+      <ul class="features-experience-highlights" aria-label="App experience highlights">
         <li>
-          <span class="tag tag--core">Core</span>
-          <p>Part of the WebView approach. Details such as your plan limits still need confirming.</p>
+          <img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true">
+          <span>A look that feels like your brand</span>
         </li>
         <li>
-          <span class="tag tag--confirm">Confirm</span>
-          <p>Depends on your website, platform rules, permissions, or plan. Check it for your project before relying on it.</p>
+          <img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true">
+          <span>Your website content stays connected</span>
+        </li>
+        <li>
+          <img src="assets/icons/icon-check-white.svg" alt="" aria-hidden="true">
+          <span>Ads placed at natural moments</span>
         </li>
       </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- How the approach works -->
-<section class="section section--surface section--rule" aria-labelledby="approach-title">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow">The approach</span>
-      <h2 id="approach-title" style="margin-top:18px">A native shell around the website you already run.</h2>
-      <p class="body-text" style="margin-top:20px">WebView displays your website inside the app. Your site remains the source of content. WebToApp settings define the parts of the app around it: its identity, navigation, and the native features you choose, where supported.</p>
-    </div>
-    <ol class="path">
-      <li>
-        <span class="path-num">1</span>
-        <div>
-          <h3>Your website provides the content</h3>
-          <p>Pages, products, articles, and account areas come from the site you already maintain.</p>
-        </div>
-      </li>
-      <li>
-        <span class="path-num">2</span>
-        <div>
-          <h3>Project settings shape the app</h3>
-          <p>Name, icon, splash screen, theme, and navigation are set for each app.</p>
-        </div>
-      </li>
-      <li>
-        <span class="path-num">3</span>
-        <div>
-          <h3>Native features are added where supported</h3>
-          <p>Notifications, device access, and analytics need configuration, permissions, and platform support.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- Core capabilities -->
-<section class="section section--surface" aria-labelledby="core-title">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Core capabilities</span>
-      <h2 id="core-title">The foundation of every project.</h2>
-      <p class="lead">These capabilities define a WebToApp project. Items marked Confirm still depend on your plan, platform, and setup.</p>
-    </div>
-
-    <div class="detail-grid detail-grid--dark">
-      <div class="detail-item">
-        <h3>WebView rendering</h3>
-        <p>Your website loads inside a native app view, so layouts, pages, and content are reused rather than rebuilt.</p>
-        <span class="tag tag--core">Core</span>
-      </div>
-      <div class="detail-item">
-        <h3>Android and iOS targets</h3>
-        <p>Plan both platforms from one project. Each platform has its own build, signing, and store steps.</p>
-        <span class="tag tag--core">Core</span>
-      </div>
-      <div class="detail-item">
-        <h3>Branding controls</h3>
-        <p>Name, icon, splash screen, and theme are set for each app. The options available depend on the platform.</p>
-        <span class="tag tag--confirm">Confirm</span>
-      </div>
-      <div class="detail-item">
-        <h3>Navigation setup</h3>
-        <p>Choose which parts of your website the app menu reaches. Layout options depend on your plan and platform.</p>
-        <span class="tag tag--confirm">Confirm</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- App customization -->
-<section class="section section--beige" aria-labelledby="custom-title">
-  <div class="wrap split">
-    <figure class="frame" style="margin:0">
-      <img src="assets/images/visual-editor.svg" alt="Illustrative editor concept showing app components, a phone preview, and branding controls" width="1920" height="1088" loading="lazy">
-      <figcaption>Illustrative editor concept. This is not a screenshot of WebToApp.</figcaption>
-    </figure>
-
-    <div>
-      <span class="eyebrow">App customization</span>
-      <h2 id="custom-title" style="margin-top:18px">Give the app its own identity.</h2>
-      <p class="body-text" style="margin-top:20px">Plan an app that feels like part of your brand on each platform. Each item below is set per app.</p>
-      <ul class="bullets">
-        <li>
-          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
-          <div>
-            <h4>App name and icon <span class="tag tag--core h-tag">Core</span></h4>
-            <p>The name and icon shown on the home screen and in the app stores.</p>
-          </div>
-        </li>
-        <li>
-          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
-          <div>
-            <h4>Splash screen <span class="tag tag--core h-tag">Core</span></h4>
-            <p>The screen shown while the app opens, so the first impression matches your brand.</p>
-          </div>
-        </li>
-        <li>
-          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
-          <div>
-            <h4>Theme and colours <span class="tag tag--confirm h-tag">Confirm</span></h4>
-            <p>Status bar, accent, and background choices depend on the platform and the app's configuration.</p>
-          </div>
-        </li>
-        <li>
-          <img src="assets/icons/icon-check-ink.svg" alt="" aria-hidden="true">
-          <div>
-            <h4>App navigation layout <span class="tag tag--confirm h-tag">Confirm</span></h4>
-            <p>Tab bars, menus, and back behaviour are planned against the platform conventions for each app.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Navigation and experience -->
-<section class="section" aria-labelledby="nav-title">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Navigation and experience</span>
-      <h2 id="nav-title">How people move through the app.</h2>
-      <p class="lead">Navigation and offline behaviour are where the app feels most different from the website, so plan them early and test them on each platform.</p>
-    </div>
-
-    <div class="detail-grid">
-      <div class="detail-item">
-        <h3>Menu destinations</h3>
-        <p>Pick the main pages of your website to show in the app navigation, such as home, products, and account.</p>
-        <span class="tag tag--confirm">Confirm</span>
-      </div>
-      <div class="detail-item">
-        <h3>Deep links</h3>
-        <p>Open specific pages of your website from links, where configured for your app and domain.</p>
-        <span class="tag tag--confirm">Confirm</span>
-      </div>
-      <div class="detail-item">
-        <h3>Caching and offline behaviour</h3>
-        <p>What works without a connection depends on implementation and device settings. Test it before release.</p>
-        <span class="tag tag--confirm">Confirm</span>
-      </div>
-      <div class="detail-item">
-        <h3>Updates from your website</h3>
-        <p>Content changes come from your site, subject to WebView caching and app behaviour, so you keep one source of content.</p>
-        <span class="tag tag--core">Core</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Device integrations -->
-<section class="section section--surface section--rule" id="integrations" aria-labelledby="integ-title">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Device integrations</span>
-      <h2 id="integ-title">Native features and what they require.</h2>
-      <p class="lead">Each integration depends on the app configuration, platform rules, permissions, and your website. Confirm the requirements below before you plan them into your app.</p>
-    </div>
-
-    <div class="table-scroll" style="margin-top:48px" role="region" aria-labelledby="integ-title" tabindex="0">
-      <table class="table">
-        <caption class="visually-hidden">Device integrations, what each one depends on, and its status</caption>
-        <thead>
-          <tr>
-            <th scope="col">Capability</th>
-            <th scope="col">What it depends on</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Push notifications</th>
-            <td>A notification service configured for each platform, and user permission.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Camera and photo selection</th>
-            <td>Camera permission and platform support for the way your website requests it.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">File uploads and downloads</th>
-            <td>How your website handles files, plus storage permissions on each platform.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Location</th>
-            <td>Location permission, platform support, and how your website uses location.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Sign-in options</th>
-            <td>Your website's authentication flow and the sign-in providers you choose.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Analytics and advertising</th>
-            <td>Integration setup, consent requirements, and the policies of each app store.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Scanning and NFC</th>
-            <td>Device hardware, permissions, and whether the target platform supports the feature.</td>
-            <td><span class="tag tag--confirm">Confirm</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-caption">Availability is confirmed per project. Store policies and device permissions apply to every app.</p>
-  </div>
-</section>
-
-<!-- Workflow -->
-<section class="section" aria-labelledby="workflow-title">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow">From website to release</span>
-      <h2 id="workflow-title" style="margin-top:18px">A clear path to a release-ready app.</h2>
-      <p class="body-text" style="margin-top:20px">Settling the integration questions early saves rework later. Each step below is a point where you confirm something before moving on.</p>
-    </div>
-    <ol class="path">
-      <li>
-        <span class="path-num">01</span>
-        <div>
-          <h3>Share your website and needs</h3>
-          <p>Provide the address and list the features you want, including device integrations, so they can be checked early.</p>
-        </div>
-      </li>
-      <li>
-        <span class="path-num">02</span>
-        <div>
-          <h3>Shape the app</h3>
-          <p>Set the name, icon, splash screen, navigation, and branding for each platform.</p>
-        </div>
-      </li>
-      <li>
-        <span class="path-num">03</span>
-        <div>
-          <h3>Confirm and configure</h3>
-          <p>Check each integration against your platform, permissions, and plan before relying on it.</p>
-        </div>
-      </li>
-      <li>
-        <span class="path-num">04</span>
-        <div>
-          <h3>Prepare for release</h3>
-          <p>Prepare signing, builds, and store listings. Build and publishing scope depends on your plan, and store review applies.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section" style="padding-top:0" aria-labelledby="cta-title">
-  <div class="wrap">
-    <div class="cta-card cta-block">
-      <span class="eyebrow">Next step</span>
-      <h2 id="cta-title" style="margin-top:18px">See how your website would work as an app.</h2>
-      <p class="lead">Start with your website address. Then confirm the features and integrations your app needs.</p>
-      <div class="cta-actions">
-        <a class="btn btn-accent" href="index.html#convert-form">Check My Website</a>
-        <a class="btn btn-outline" href="pricing.html">View pricing</a>
-      </div>
     </div>
   </div>
 </section>
@@ -358,7 +270,7 @@
       <nav aria-labelledby="f-learn">
         <h2 class="footer-title" id="f-learn">Learn</h2>
         <ul class="footer-links">
-          <li><a href="#integrations">Device integrations</a></li>
+          <li><a href="#modules">Powerful modules</a></li>
           <li><a href="index.html#use-cases">Use cases</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
         </ul>

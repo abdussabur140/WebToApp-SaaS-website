@@ -30,9 +30,11 @@
       <span class="visually-hidden">Menu</span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="features.html">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <span class="nav-login" aria-disabled="true" title="Account login isn't available yet">Login</span>
+      <div class="site-nav-links">
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <span class="nav-login" aria-disabled="true" title="Account login isn't available yet">Login</span>
+      </div>
       <a class="btn btn-accent btn-sm" href="#convert-form">Get started</a>
     </nav>
   </div>
@@ -182,12 +184,10 @@
 </section>
 
 <!-- 2. Platforms -->
-<section class="section section--rule" id="platforms" aria-labelledby="platforms-title">
+<section class="section platforms-strip" id="platforms" aria-labelledby="platforms-title">
   <div class="wrap">
     <div class="section-head section-head--center">
-      <span class="eyebrow">Website platforms</span>
-      <h2 id="platforms-title">Start from the website you already run.</h2>
-      <p class="lead">Your site might be built with a website builder, an e-commerce platform, or custom code. The logos below are examples of common technologies. They do not indicate partnerships, endorsements, or confirmed integrations.</p>
+      <h2 id="platforms-title">Every Tech Stack. Ready for Mobile.</h2>
     </div>
 
     <div class="marquee">
@@ -256,7 +256,20 @@
         </div>
       </div>
     </div>
-    <p class="marquee-note">Compatibility depends on your site. Check its mobile layout, sign-in, and checkout flows before you plan your app.</p>
+  </div>
+</section>
+
+<!-- Dashboard overview -->
+<section class="section dashboard-overview" id="dashboard-overview" aria-labelledby="dashboard-overview-title">
+  <div class="wrap">
+    <header class="section-head section-head--center">
+      <span class="eyebrow">App dashboard</span>
+      <h2 id="dashboard-overview-title">Your app, easy to manage.</h2>
+      <p class="lead">Update app details, adjust settings, and preview your app from one clear dashboard.</p>
+    </header>
+    <figure class="dashboard-preview">
+      <img src="assets/images/dashboard-overview.png" alt="WebToApp dashboard showing app settings, a navigation menu, and a mobile app preview" width="1344" height="768" loading="lazy">
+    </figure>
   </div>
 </section>
 
@@ -544,78 +557,6 @@
   </div>
 </section>
 
-<!-- 6. Project setup -->
-<section class="section section--beige" id="demo" aria-labelledby="demo-title">
-  <div class="wrap split">
-    <figure class="frame" style="margin:0">
-      <img src="assets/images/visual-editor.svg" alt="Illustrative editor concept showing app components, a phone preview, and branding controls" width="1920" height="1088">
-      <figcaption>Illustrative editor concept. This is not a screenshot of WebToApp.</figcaption>
-    </figure>
-
-    <div>
-      <span class="eyebrow">Project setup</span>
-      <h2 id="demo-title" style="margin-top:18px">Shape the app around your website.</h2>
-      <p class="body-text" style="margin-top:20px">Review the core details of your app in one place: the source website, name, platforms, branding, and navigation. The panel shows the kind of settings you would review. It is an example, not a working editor.</p>
-
-      <div class="demo-panel" style="margin-top:32px" role="group" aria-label="Example app project settings">
-        <div class="demo-panel-head">
-          <span>Example app project</span>
-          <small>Preview only</small>
-        </div>
-        <dl>
-          <div class="demo-row">
-            <dt>Website</dt>
-            <dd>https://your-website.com</dd>
-          </div>
-          <div class="demo-row">
-            <dt>App name</dt>
-            <dd>Your app name</dd>
-          </div>
-          <div class="demo-row">
-            <dt>Platforms</dt>
-            <dd>
-              <div class="chip-row">
-                <span class="chip"><i></i>Android</span>
-                <span class="chip"><i></i>iOS</span>
-              </div>
-            </dd>
-          </div>
-          <div class="demo-row">
-            <dt>Branding</dt>
-            <dd>
-              <div class="swatches">
-                <span class="swatch"><i style="background:#1C1A15"></i>Primary</span>
-                <span class="swatch"><i style="background:#EBE7DF"></i>Background</span>
-                <span class="swatch"><i style="background:#FFD400"></i>Accent</span>
-              </div>
-            </dd>
-          </div>
-          <div class="demo-row">
-            <dt>Navigation</dt>
-            <dd>
-              <div class="chip-row">
-                <span class="chip">Home</span>
-                <span class="chip">Products</span>
-                <span class="chip">Account</span>
-              </div>
-            </dd>
-          </div>
-          <div class="demo-row">
-            <dt>Integrations</dt>
-            <dd>
-              <div class="chip-row">
-                <span class="chip"><i class="open"></i>Camera: confirm</span>
-                <span class="chip"><i class="open"></i>Push: configure</span>
-              </div>
-            </dd>
-          </div>
-        </dl>
-      </div>
-      <p class="demo-caption">Example values only. Your settings will depend on your website and plan.</p>
-    </div>
-  </div>
-</section>
-
 <!-- 7. Responsive websites -->
 <section class="section" aria-labelledby="responsive-title">
   <div class="wrap split">
@@ -867,7 +808,7 @@
         <ul class="footer-links">
           <li><a href="#use-cases">Use cases</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="features.html#integrations">Device integrations</a></li>
+          <li><a href="features.html#modules">Powerful modules</a></li>
         </ul>
       </nav>
     </div>

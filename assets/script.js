@@ -117,6 +117,174 @@
   });
 })();
 
+/* Scroll-triggered reveals for major content blocks and visual groups. */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches || document.hidden || !('IntersectionObserver' in window)) return;
+
+  var groups = [
+    {
+      selector: '.section-head, .webtoapp_features-head, .webtoapp_features-cta, .plan-note, .pricing-demo-notice, .pricing-final-card, .hero-caption',
+      effect: 'fade'
+    },
+    {
+      selector: '.feature-card-grid > .feature-card, .steps > .step, .use-list > li, .concept-row > .concept, .promise-grid > .promise, .plans > .plan-card, .mini-steps > li, .faq-list > .faq-item',
+      effect: 'fade',
+      stagger: true
+    },
+    {
+      selector: '.dashboard-preview, .pricing-table-scroll',
+      effect: 'scale'
+    },
+    {
+      selector: '.split > .frame',
+      effect: 'mask'
+    },
+    {
+      selector: '.split:not(.split--top) > :first-child',
+      effect: 'left'
+    },
+    {
+      selector: '.split:not(.split--top) > :last-child',
+      effect: 'right'
+    }
+  ];
+  var elements = [];
+  var effects = new WeakMap();
+  groups.forEach(function (group) {
+    document.querySelectorAll(group.selector).forEach(function (element) {
+      if (effects.has(element)) return;
+      effects.set(element, group);
+      elements.push(element);
+    });
+  });
+  if (!elements.length) return;
+
+  var delayByGroup = new WeakMap();
+  elements.forEach(function (element) {
+    var groupConfig = effects.get(element);
+    var group = element.parentElement;
+    var delay = groupConfig.stagger ? delayByGroup.get(group) || 0 : 0;
+    element.dataset.motion = 'reveal';
+    element.dataset.motionEffect = groupConfig.effect;
+    element.style.setProperty('--reveal-delay', Math.min(delay, 280) + 'ms');
+    if (groupConfig.stagger) delayByGroup.set(group, delay + 65);
+  });
+
+  var remaining = elements.length;
+  var observer;
+  var checkFrame = 0;
+
+  function stopFallbackCheck() {
+    window.removeEventListener('scroll', scheduleCheck);
+    window.removeEventListener('resize', scheduleCheck);
+    document.removeEventListener('visibilitychange', onVisibilityChange);
+    if (checkFrame) window.cancelAnimationFrame(checkFrame);
+    checkFrame = 0;
+  }
+
+  function show(element) {
+    if (element.dataset.motion !== 'reveal') return;
+    element.dataset.motion = 'visible';
+    observer.unobserve(element);
+    remaining -= 1;
+    if (!remaining) stopFallbackCheck();
+  }
+
+  function checkVisible() {
+    checkFrame = 0;
+    if (document.hidden) return;
+
+    elements.forEach(function (element) {
+      if (element.dataset.motion !== 'reveal') return;
+      var bounds = element.getBoundingClientRect();
+      if (bounds.bottom >= 0 && bounds.top <= window.innerHeight) show(element);
+    });
+  }
+
+  function scheduleCheck() {
+    if (!checkFrame) checkFrame = window.requestAnimationFrame(checkVisible);
+  }
+
+  function onVisibilityChange() {
+    if (!document.hidden) scheduleCheck();
+  }
+
+  observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      show(entry.target);
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px'
+  });
+
+  elements.forEach(function (element) {
+    observer.observe(element);
+  });
+  document.documentElement.classList.add('motion-ready');
+  window.addEventListener('scroll', scheduleCheck, { passive: true });
+  window.addEventListener('resize', scheduleCheck);
+  document.addEventListener('visibilitychange', onVisibilityChange);
+  scheduleCheck();
+
+  document.addEventListener('focusin', function (event) {
+    var target = event.target.closest('[data-motion="reveal"]');
+    if (target) show(target);
+  });
+
+  var showAll = function (event) {
+    if (!event.matches) return;
+    elements.forEach(function (element) {
+      show(element);
+    });
+    observer.disconnect();
+    stopFallbackCheck();
+  };
+  if (reduceMotion.addEventListener) {
+    reduceMotion.addEventListener('change', showAll);
+  } else if (reduceMotion.addListener) {
+    reduceMotion.addListener(showAll);
+  }
+})();
+
+/* Pricing platform switcher: update the selected platform on each plan card. */
+(function () {
+  'use strict';
+
+  var switcher = document.querySelector('.pricing-platform-switch');
+  var label = document.querySelector('.pricing-platform-label');
+  if (!switcher || !label) return;
+
+  var buttons = switcher.querySelectorAll('button[data-platform]');
+  var planLabels = document.querySelectorAll('[data-platform-plan]');
+  var comparisonLabels = document.querySelectorAll('[data-platform-comparison]');
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var platform = button.getAttribute('data-platform');
+      if (!platform) return;
+
+      buttons.forEach(function (option) {
+        var selected = option === button;
+        option.classList.toggle('is-selected', selected);
+        option.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+
+      label.textContent = 'Plans for ' + platform;
+      planLabels.forEach(function (planLabel) {
+        planLabel.textContent = platform + ' app';
+      });
+      comparisonLabels.forEach(function (comparisonLabel) {
+        comparisonLabel.textContent = platform;
+      });
+    });
+  });
+})();
+
 /* Hero animation: scale the composition to its container and pause it
    when the hero is off-screen or the tab is hidden. Animation itself is
    CSS-only; reduced-motion users get a static layout from theme.css. */
