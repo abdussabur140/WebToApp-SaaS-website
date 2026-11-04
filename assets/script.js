@@ -285,6 +285,88 @@
   });
 })();
 
+/* Pricing competitor comparison: keep WebToApp fixed and swap the selected competitor row. */
+(function () {
+  'use strict';
+
+  var switcher = document.querySelector('.competitor-switch');
+  if (!switcher) return;
+
+  var buttons = switcher.querySelectorAll('button[data-competitor]');
+  var valueCells = document.querySelectorAll('[data-competitor-value]');
+  var competitorLink = document.querySelector('[data-competitor-link]');
+  var status = document.getElementById('competitor-selection-status');
+  var competitors = {
+    appilix: {
+      name: 'Appilix',
+      url: 'https://appilix.com/pricing',
+      android: 'Included with combo',
+      ios: 'Included with combo',
+      bundle: 'Standard combo: 1 Android + 1 iOS app',
+      price: '$229 Standard; $439 Premium combo',
+      billing: 'One-time payment',
+      publishing: 'Standard: self-publish; Premium: publishing service'
+    },
+    median: {
+      name: 'Median',
+      url: 'https://median.co/pricing',
+      android: 'Android build platform listed',
+      ios: 'iOS build platform listed',
+      bundle: 'Both build platforms listed',
+      price: 'Free; Starter $229 activation',
+      billing: '$229 activation, then $179/year from month 12',
+      publishing: 'Build tools listed; confirm publishing services'
+    },
+    web2native: {
+      name: 'Web2Native',
+      url: 'https://www.webtonative.com/pricing',
+      android: '1 Android app in Starter',
+      ios: '1 iOS app in Starter',
+      bundle: 'Starter includes 1 Android + 1 iOS app',
+      price: 'From $129/year',
+      billing: 'Annual plans; tiers listed up to $999/year',
+      publishing: 'Premium tier lists store publishing; build limits vary'
+    },
+    buildnatively: {
+      name: 'BuildNatively',
+      url: 'https://www.buildnatively.com/',
+      android: 'Android apps supported',
+      ios: 'iOS apps supported',
+      bundle: 'Create iOS and Android apps',
+      price: 'Free to get started; paid price not shown',
+      billing: 'Paid billing terms not publicly listed',
+      publishing: 'App Store approval support is advertised; confirm scope'
+    }
+  };
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var selectedCompetitor = button.getAttribute('data-competitor');
+      var competitor = competitors[selectedCompetitor];
+      if (!competitor) return;
+
+      buttons.forEach(function (option) {
+        var selected = option === button;
+        option.classList.toggle('is-selected', selected);
+        option.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+
+      valueCells.forEach(function (cell) {
+        var value = competitor[cell.getAttribute('data-competitor-value')];
+        if (value) cell.textContent = value;
+      });
+
+      if (competitorLink) {
+        competitorLink.textContent = competitor.name;
+        competitorLink.href = competitor.url;
+      }
+      if (status) {
+        status.textContent = 'Comparing WebToApp with ' + competitor.name + '.';
+      }
+    });
+  });
+})();
+
 /* Hero animation: scale the composition to its container and pause it
    when the hero is off-screen or the tab is hidden. Animation itself is
    CSS-only; reduced-motion users get a static layout from theme.css. */
