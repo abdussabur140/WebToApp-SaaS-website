@@ -755,8 +755,22 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer site-footer--newsletter">
   <div class="wrap">
+    <section class="footer-newsletter" aria-labelledby="footer-newsletter-title">
+      <div class="footer-newsletter-copy">
+        <h2 id="footer-newsletter-title">Website-to-app tips</h2>
+        <p>Get updates and practical tips for building and publishing your app.</p>
+      </div>
+      <form class="footer-newsletter-form">
+        <label class="visually-hidden" for="footer-newsletter-email">Email address</label>
+        <div class="footer-newsletter-field">
+          <input id="footer-newsletter-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required aria-describedby="footer-newsletter-status">
+          <button class="btn btn-accent" type="submit">Subscribe <span aria-hidden="true">›</span></button>
+        </div>
+        <p class="footer-newsletter-status" id="footer-newsletter-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="logo" href="index.html" aria-label="WebToApp home">
@@ -764,22 +778,37 @@
           <span>WebToApp</span>
         </a>
         <p>Turn your existing website into a WebView-based Android and iOS app. Features and availability are confirmed for each project.</p>
+        <p class="footer-company">
+          <span>A product of</span>
+          <strong>Oezu Technologies LLC</strong>
+          <span>30 N Gould St, STE R<br>Sheridan, WY 82801, USA</span>
+        </p>
       </div>
-      <nav aria-labelledby="f-product">
-        <h2 class="footer-title" id="f-product">Product</h2>
+      <nav aria-labelledby="f-about">
+        <h2 class="footer-title" id="f-about">About us</h2>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About WebToApp</a></li>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#use-cases">Who it's for</a></li>
+          <li><a href="index.html#platforms">Supported platforms</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-discover">
+        <h2 class="footer-title" id="f-discover">Discover</h2>
         <ul class="footer-links">
           <li><a href="features.html">Features</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#convert-form">Check my website</a></li>
+          <li><a href="index.html#use-cases">Use cases</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="features.html#modules">Powerful modules</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-learn">
-        <h2 class="footer-title" id="f-learn">Learn</h2>
+      <nav aria-labelledby="f-contact">
+        <h2 class="footer-title" id="f-contact">Contact us</h2>
         <ul class="footer-links">
-          <li><a href="#use-cases">Use cases</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="features.html#modules">Powerful modules</a></li>
+          <li><a href="index.html#convert-form">Check your website</a></li>
+          <li><a href="index.html#faq">Project questions</a></li>
+          <li><a href="pricing.html#pricing-faq-title">Pricing questions</a></li>
         </ul>
       </nav>
     </div>
